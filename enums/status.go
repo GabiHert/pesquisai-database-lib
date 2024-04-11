@@ -1,0 +1,9 @@
+package enums
+
+const (
+	PENDING   = "PENDING"
+	DISMISSED = "DISMISSED"
+	ACCEPTED  = "ACCEPTED"
+	FINISHED  = "FINISHED"
+	ERROR     = "ERROR"
+)
