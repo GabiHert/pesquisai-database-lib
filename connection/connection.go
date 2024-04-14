@@ -18,7 +18,7 @@ type Connection struct {
 func (c *Connection) Connect(config Config) (err error) {
 	dsn := fmt.Sprintf(
 		"host=%s user=%s password=%s dbname=%s port=%s sslmode=disable",
-		config.User, config.Host, config.Psw, config.Name, config.Port,
+		config.Host, config.User, config.Psw, config.Name, config.Port,
 	)
 
 	c.DB, err = gorm.Open(postgres.Open(dsn), &config.GormConfig)
