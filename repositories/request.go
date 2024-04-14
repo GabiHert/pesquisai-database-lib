@@ -27,6 +27,6 @@ func (s *Request) Get(ctx context.Context, id string) (request *models.Request, 
 }
 
 func (s *Request) GetWithResearches(ctx context.Context, id string) (request *models.Request, err error) {
-	res := s.Connection.WithContext(ctx).Preload("Researches").First(&request, id)
+	res := s.Connection.WithContext(ctx).Preload("Researches").First(&request, "id=?", id)
 	return request, res.Error
 }
