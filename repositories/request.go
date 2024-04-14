@@ -21,12 +21,12 @@ func (s *Request) GetTotals(ctx context.Context, id string) (total, totalFinishe
 	return request.TotalResearches, request.TotalFinishedResearched, res.Error
 }
 
-func (s *Request) Get(ctx context.Context, id string) (request models.Request, err error) {
+func (s *Request) Get(ctx context.Context, id string) (request *models.Request, err error) {
 	res := s.Connection.WithContext(ctx).First(&request, id)
 	return request, res.Error
 }
 
-func (s *Request) GetWithResearches(ctx context.Context, id string) (request models.Request, err error) {
+func (s *Request) GetWithResearches(ctx context.Context, id string) (request *models.Request, err error) {
 	res := s.Connection.WithContext(ctx).Preload("Researches").First(&request, id)
 	return request, res.Error
 }

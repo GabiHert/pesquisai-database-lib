@@ -20,7 +20,7 @@ func (s *Research) UpdateStatus(ctx context.Context, id, status string) error {
 	return res.Error
 }
 
-func (s *Research) Get(ctx context.Context, id string) (research models.Research, err error) {
+func (s *Research) Get(ctx context.Context, id string) (research *models.Research, err error) {
 	res := s.Connection.WithContext(ctx).First(&research, id)
 	return research, res.Error
 }
