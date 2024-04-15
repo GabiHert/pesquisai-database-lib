@@ -17,6 +17,7 @@ func (s *Request) Create(ctx context.Context, request *models.Request) error {
 
 func (s *Request) GetTotals(ctx context.Context, id string) (total, totalFinishedResearched int, err error) {
 	var request models.Request
+
 	res := s.Connection.WithContext(ctx).Select("total_researches", "total_finished_researches").First(&request, id)
 	return request.TotalResearches, request.TotalFinishedResearches, res.Error
 }
