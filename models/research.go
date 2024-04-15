@@ -9,7 +9,7 @@ type Research struct {
 	RequestID *string   `gorm:"type:uuid"`
 	Title     *string   `gorm:"type:varchar(50)"`
 	Link      *string   `gorm:"type:varchar(100)"`
-	Status    *string   `gorm:"type:varchar(10)"`
+	Status    *string   `gorm:"type:varchar(10);default:'PROCESSING'"`
 	Summary   *string   `gorm:"type:text"`
 	CreatedAt time.Time `gorm:"autoCreateTime"`
 	UpdatedAt time.Time
