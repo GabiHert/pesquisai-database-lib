@@ -16,7 +16,7 @@ func (s *Research) Create(ctx context.Context, research *models.Research) error 
 }
 
 func (s *Research) UpdateStatus(ctx context.Context, id, status string) error {
-	res := s.Connection.WithContext(ctx).Model(&models.Research{ID: id}).UpdateColumn("status", status)
+	res := s.Connection.WithContext(ctx).Model(&models.Research{ID: &id}).UpdateColumn("status", status)
 	return res.Error
 }
 
