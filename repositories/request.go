@@ -2,8 +2,8 @@ package repositories
 
 import (
 	"context"
-	"github.com/GabiHert/pesquisai-database-lib/connection"
-	"github.com/GabiHert/pesquisai-database-lib/models"
+	"github.com/PesquisAi/pesquisai-database-lib/connection"
+	"github.com/PesquisAi/pesquisai-database-lib/models"
 )
 
 type Request struct {
