@@ -2,8 +2,8 @@ package repositories
 
 import (
 	"context"
-	"github.com/PesquisAi/pesquisai-database-lib/connection"
-	"github.com/PesquisAi/pesquisai-database-lib/models"
+	"github.com/PesquisAi/pesquisai-database-lib/sql/connection"
+	"github.com/PesquisAi/pesquisai-database-lib/sql/models"
 )
 
 type Request struct {
@@ -34,4 +34,9 @@ func (s *Request) GetAttributes(ctx context.Context, id string, attributes ...st
 func (s *Request) GetWithResearches(ctx context.Context, id string) (request *models.Request, err error) {
 	res := s.Connection.WithContext(ctx).Preload("Researches").First(&request, id)
 	return request, res.Error
+}
+
+func (s *Request) UpdateStatus(ctx context.Context, id, status string) error {
+	res := s.Connection.WithContext(ctx).Model(&models.Request{ID: &id}).UpdateColumn("status", status)
+	return res.Error
 }

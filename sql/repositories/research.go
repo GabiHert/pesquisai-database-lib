@@ -2,8 +2,8 @@ package repositories
 
 import (
 	"context"
-	"github.com/PesquisAi/pesquisai-database-lib/connection"
-	"github.com/PesquisAi/pesquisai-database-lib/models"
+	"github.com/PesquisAi/pesquisai-database-lib/sql/connection"
+	"github.com/PesquisAi/pesquisai-database-lib/sql/models"
 )
 
 type Research struct {
