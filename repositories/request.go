@@ -26,8 +26,12 @@ func (s *Request) Get(ctx context.Context, id string) (request *models.Request, 
 	res := s.Connection.WithContext(ctx).First(&request, id)
 	return request, res.Error
 }
+func (s *Request) GetAttributes(ctx context.Context, id string, attributes ...string) (request *models.Request, err error) {
+	res := s.Connection.WithContext(ctx).Select(attributes).First(&request, id)
+	return request, res.Error
+}
 
 func (s *Request) GetWithResearches(ctx context.Context, id string) (request *models.Request, err error) {
-	res := s.Connection.WithContext(ctx).Preload("Researches").First(&request, "id=?", id)
+	res := s.Connection.WithContext(ctx).Preload("Researches").First(&request, id)
 	return request, res.Error
 }
