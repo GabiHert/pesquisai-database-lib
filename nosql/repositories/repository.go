@@ -10,11 +10,11 @@ import (
 )
 
 type Repository struct {
-	collection *mongo.Collection
+	Collection *mongo.Collection
 }
 
 func (s *Repository) Create(ctx context.Context, model interface{}) error {
-	_, err := s.collection.InsertOne(ctx, model)
+	_, err := s.Collection.InsertOne(ctx, model)
 	if err != nil {
 		return err
 	}
@@ -26,7 +26,7 @@ func (s *Repository) Update(ctx context.Context, id string, values bson.M) error
 	update := bson.M{"$set": values}
 	op := options.Update().SetUpsert(false)
 
-	_, err := s.collection.UpdateOne(ctx, filter, update, op)
+	_, err := s.Collection.UpdateOne(ctx, filter, update, op)
 	if err != nil {
 		return err
 	}
@@ -37,7 +37,7 @@ func (s *Repository) Update(ctx context.Context, id string, values bson.M) error
 func (s *Repository) GetById(ctx context.Context, id string, model interface{}) error {
 	filter := bson.M{"_id": id}
 
-	result := s.collection.FindOne(ctx, filter)
+	result := s.Collection.FindOne(ctx, filter)
 	if result.Err() != nil {
 		return result.Err()
 	}
