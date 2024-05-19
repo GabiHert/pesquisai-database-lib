@@ -32,7 +32,9 @@ func (s *Request) GetAttributes(ctx context.Context, id string, attributes ...st
 }
 
 func (s *Request) GetWithRelations(ctx context.Context, id string) (request *models.Request, err error) {
-	res := s.Connection.WithContext(ctx).Preload("Languages").Preload("Researches").First(&request, "id = ?", id)
+	res := s.Connection.WithContext(ctx).
+		Preload("Locations").Preload("Languages").Preload("Researches").
+		First(&request, "id = ?", id)
 	return request, res.Error
 }
 
@@ -43,7 +45,14 @@ func (s *Request) UpdateStatus(ctx context.Context, id, status string) error {
 
 func (s *Request) RelateLanguage(ctx context.Context, id string, language string) error {
 	return s.Connection.WithContext(ctx).Create(&models.RequestsLanguage{
-		RequestsID: id,
+		RequestID:  id,
 		LanguageID: language,
+	}).Error
+}
+
+func (s *Request) RelateLocation(ctx context.Context, id string, location string) error {
+	return s.Connection.WithContext(ctx).Create(&models.RequestsLocation{
+		RequestID:  id,
+		LocationID: location,
 	}).Error
 }

@@ -1,7 +1,7 @@
 package models
 
 type RequestsLanguage struct {
-	RequestsID string `gorm:"type:uuid;primary_key"`
+	RequestID  string `gorm:"type:uuid;primary_key"`
 	LanguageID string `gorm:"type:varchar(10);primary_key"`
 }
 
