@@ -14,3 +14,7 @@ type Research struct {
 	CreatedAt *time.Time `gorm:"autoCreateTime"`
 	UpdatedAt *time.Time
 }
+
+func (r Research) TableName() string {
+	return "pesquisai.researches"
+}

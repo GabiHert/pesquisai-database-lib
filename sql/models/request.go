@@ -15,4 +15,9 @@ type Request struct {
 	CreatedAt               *time.Time `gorm:"autoCreateTime"`
 	UpdatedAt               *time.Time
 	Researches              []Research `gorm:"foreignKey:RequestID"`
+	Languages               []Language `gorm:"many2many:pesquisai.request_languages;foreignKey:ID;joinForeignKey:RequestsID;References:ID;joinReferences:LanguageID"`
+}
+
+func (r Request) TableName() string {
+	return "pesquisai.requests"
 }
