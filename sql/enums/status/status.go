@@ -1,4 +1,4 @@
-package enums
+package enumstatus
 
 const (
 	PROCESSING = "PROCESSING"
