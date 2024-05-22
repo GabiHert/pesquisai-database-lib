@@ -5,13 +5,7 @@ import (
 	"fmt"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
-	"gorm.io/gorm"
 )
-
-type Config struct {
-	User, Host, Psw, Name, Port string
-	GormConfig                  gorm.Config
-}
 
 type Connection struct {
 	*mongo.Client
