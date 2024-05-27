@@ -13,8 +13,8 @@ const (
 	Bs   = "bs"
 	Bg   = "bg"
 	Ca   = "ca"
-	ZhCn = "zh-CN"
-	ZhTw = "zh-TW"
+	ZhCn = "zh-cn"
+	ZhTw = "zh-tw"
 	Hr   = "hr"
 	Cs   = "cs"
 	Da   = "da"
@@ -56,8 +56,8 @@ const (
 	Oc   = "oc"
 	Fa   = "fa"
 	Pl   = "pl"
-	PtBr = "pt-BR"
-	PtPt = "pt-PT"
+	PtBr = "pt-br"
+	PtPt = "pt-pt"
 	Pa   = "pa"
 	Ro   = "ro"
 	Ru   = "ru"
@@ -98,8 +98,8 @@ var Languages = []string{
 	"bs",
 	"bg",
 	"ca",
-	"zh-CN",
-	"zh-TW",
+	"zh-cn",
+	"zh-tw",
 	"hr",
 	"cs",
 	"da",
@@ -141,8 +141,8 @@ var Languages = []string{
 	"oc",
 	"fa",
 	"pl",
-	"pt-BR",
-	"pt-PT",
+	"pt-br",
+	"pt-pt",
 	"pa",
 	"ro",
 	"ru",
