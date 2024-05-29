@@ -3,7 +3,6 @@ package enumstatus
 const (
 	PROCESSING = "PROCESSING"
 	PENDING    = "PENDING"
-	ACCEPTED   = "ACCEPTED"
 	SUMMARIZED = "SUMMARIZED"
 	FINISHED   = "FINISHED"
 	ERROR      = "ERROR"
