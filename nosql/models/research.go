@@ -11,6 +11,7 @@ type Research struct {
 	Link      *string    `bson:"link,omitempty"`
 	Status    *string    `bson:"status,omitempty"`
 	Summary   *string    `bson:"summary,omitempty"`
+	Content   *string    `bson:"content,omitempty"`
 	CreatedAt *time.Time `bson:"createdAt,omitempty"`
 	UpdatedAt *time.Time `bson:"updatedAt,omitempty"`
 }
